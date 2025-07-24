@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* базовые стили */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.900');
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+.dark body {
+  background-color: theme('colors.gray.900');
+  color: theme('colors.gray.100');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* карточка */
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  border: 1px solid theme('colors.gray.200');
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+/* карточка в темной теме */
+.dark .card {
+  background-color: theme('colors.gray.800');
+  border-color: theme('colors.gray.700');
+}
+
+/* эффект наведения на карточку */
+.card-hover:hover {
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-0.125rem);
+}
+
+/* кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+/* фокус для кнопки */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* неактивная кнопка */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* основная кнопка */
+.btn-primary {
+  background-color: theme('colors.primary.600');
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* наведение на основную кнопку */
+.btn-primary:hover {
+  background-color: theme('colors.primary.700');
+}
+
+/* вторичная кнопка */
+.btn-secondary {
+  background-color: theme('colors.gray.100');
+  color: theme('colors.gray.900');
+}
+
+/* наведение на вторичную кнопку */
+.btn-secondary:hover {
+  background-color: theme('colors.gray.200');
+}
+
+/* вторичная кнопка в темной теме */
+.dark .btn-secondary {
+  background-color: theme('colors.gray.700');
+  color: theme('colors.gray.100');
+}
+
+/* наведение на вторичную кнопку в темной теме */
+.dark .btn-secondary:hover {
+  background-color: theme('colors.gray.600');
+}
+
+/* кнопка успеха */
+.btn-success {
+  background-color: theme('colors.success.600');
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* наведение на кнопку успеха */
+.btn-success:hover {
+  background-color: theme('colors.success.700');
+}
+
+/* кнопка предупреждения */
+.btn-warning {
+  background-color: theme('colors.warning.600');
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* наведение на кнопку предупреждения */
+.btn-warning:hover {
+  background-color: theme('colors.warning.700');
+}
+
+/* кнопка ошибки */
+.btn-error {
+  background-color: theme('colors.error.600');
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* наведение на кнопку ошибки */
+.btn-error:hover {
+  background-color: theme('colors.error.700');
+}
+
+/* поля ввода */
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid theme('colors.gray.300');
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: white;
+  color: theme('colors.gray.900');
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+/* поле ввода в темной теме */
+.dark .input {
+  border-color: theme('colors.gray.600');
+  background-color: theme('colors.gray.800');
+  color: theme('colors.gray.100');
+}
+
+/* placeholder для поля ввода */
+.input::placeholder {
+  color: theme('colors.gray.400');
+}
+
+/* placeholder в темной теме */
+.dark .input::placeholder {
+  color: theme('colors.gray.500');
+}
+
+/* фокус для поля ввода */
+.input:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px theme('colors.primary.500');
+}
+
+/* форматирование чисел по-русски */
+.currency {
+  font-family: monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* прогресс-бар */
+.progress-bar {
+  width: 100%;
+  background-color: theme('colors.gray.200');
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+/* прогресс-бар в темной теме */
+.dark .progress-bar {
+  background-color: theme('colors.gray.700');
+}
+
+/* заполнение прогресс-бара */
+.progress-fill {
+  height: 100%;
+  background-image: linear-gradient(to right, theme('colors.primary.500'), theme('colors.primary.600'));
+  border-radius: 9999px;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+/* индикатор положительного статуса */
+.status-positive {
+  color: theme('colors.success.600');
+}
+
+/* положительный статус в темной теме */
+.dark .status-positive {
+  color: theme('colors.success.400');
+}
+
+/* индикатор отрицательного статуса */
+.status-negative {
+  color: theme('colors.error.600');
+}
+
+/* отрицательный статус в темной теме */
+.dark .status-negative {
+  color: theme('colors.error.400');
+}
+
+/* нейтральный статус */
+.status-neutral {
+  color: theme('colors.gray.600');
+}
+
+/* нейтральный статус в темной теме */
+.dark .status-neutral {
+  color: theme('colors.gray.400');
+}
+
+/* анимация появления */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* анимация появления снизу */
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* анимация появления сверху */
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* тонкий скроллбар */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(203 213 225) rgb(241 245 249);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: theme('colors.gray.100');
+  border-radius: 9999px;
+}
+
+/* трек скроллбара в темной теме */
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background-color: theme('colors.gray.800');
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: theme('colors.gray.300');
+  border-radius: 9999px;
+}
+
+/* ползунок скроллбара в темной теме */
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: theme('colors.gray.600');
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.gray.400');
+}
+
+/* ползунок скроллбара при наведении в темной теме */
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.gray.500');
+}
+
+/* эффект стекла */
+.glass {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* эффект стекла в темной теме */
+.dark .glass {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+/* градиент основной */
+.gradient-primary {
+  background-image: linear-gradient(to bottom right, theme('colors.primary.500'), theme('colors.primary.600'));
+}
+
+/* градиент успеха */
+.gradient-success {
+  background-image: linear-gradient(to bottom right, theme('colors.success.500'), theme('colors.success.600'));
+}
+
+/* градиент предупреждения */
+.gradient-warning {
+  background-image: linear-gradient(to bottom right, theme('colors.warning.500'), theme('colors.warning.600'));
+}
+
+/* градиент ошибки */
+.gradient-error {
+  background-image: linear-gradient(to bottom right, theme('colors.error.500'), theme('colors.error.600'));
+}
+
+/* оптимизация для мобильных */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+  
+  .card-hover:hover {
+    transform: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* удобство для сенсорных устройств */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* обрезка текста на 2 строки */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* обрезка текста на 3 строки */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* адаптивный размер валюты для мобильных */
+@media (max-width: 640px) {
+  .currency {
+    font-size: 0.875rem;
+  }
+}
+
+/* улучшенный фокус для мобильных */
+@media (max-width: 1024px) {
+  .btn:focus,
+  .input:focus,
+  button:focus {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
+  }
+}
+
+/* безопасная область для мобильных */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-pl {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-area-pr {
+  padding-right: env(safe-area-inset-right);
+}
+
+/* предотвращение зума на iOS при фокусе на поле */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="date"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
