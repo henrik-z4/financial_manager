@@ -1,8 +1,6 @@
 # Финансовый Менеджер
 
 <img width="1465" height="750" alt="Screenshot 2025-07-24 at 19 29 12" src="https://github.com/user-attachments/assets/051cc917-9330-4efa-a15e-10527d86400d" />
-<img width="1465" height="750" alt="Screenshot 2025-07-24 at 19 29 46" src="https://github.com/user-attachments/assets/28c72b58-9559-44fb-8ec7-b4167203d27d" />
-<img width="1465" height="750" alt="Screenshot 2025-07-24 at 19 29 29" src="https://github.com/user-attachments/assets/df8255e3-274e-4479-a6fb-ae24c38f3345" />
 
 Современное приложение для управления личными финансами с красивым интерфейсом. Полностью open-source, бесплатное для самостоятельного размещения, с поддержкой русского языка и достойной аналитикой.
 
@@ -121,3 +119,8 @@ npm test
 
 **Вклад в проект приветствуется!**
 Пишите баги, пожелания и pull request'ы.
+
+
+## Галерея
+<img width="1465" height="750" alt="Screenshot 2025-07-24 at 19 29 46" src="https://github.com/user-attachments/assets/28c72b58-9559-44fb-8ec7-b4167203d27d" />
+<img width="1465" height="750" alt="Screenshot 2025-07-24 at 19 29 29" src="https://github.com/user-attachments/assets/df8255e3-274e-4479-a6fb-ae24c38f3345" />
